@@ -1,0 +1,51 @@
+{
+  "name": "travelcomfy",
+  "version": "1.0.0",
+  "description": "Flight Search Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js",
+    "servelive": "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt live",
+    "servedev" : "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "webpack": "^2.6.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "chai": "^2.2.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.2",
+    "ejs-amd": "^1.0.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-csslint": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-githooks": "^0.6.0",
+    "grunt-requirejs": "^0.4.2",
+    "less-loader": "^4.0.3",
+    "load-grunt-tasks": "^3.5.0",
+    "mocha": "^2.4.5",
+    "resolve-url-loader": "^2.0.2",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.0"
+  },
+  "keywords": [
+    "flight",
+    "travel"
+  ],
+  "author": "Parveen Arora <parveen1112@gmail.com>",
+  "license": "ISC"
+}

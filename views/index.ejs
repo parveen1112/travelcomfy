@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+<header class="main-header">
+    <h1>TravelComfy: Flight Search Engine</h1>
+    <a href="javascript:void(0);" class="nav-icon">&#9776;</a>
+    </div>
+</header>
+
+<section class="row container middle-container">
+    <section class="flight-filter col-md-3">
+        <% include ./partials/tabs %>
+        <% include ./partials/slider %>
+    </section>
+    <section class="flights-block col-md-9">
+        <span>
+
+        </span>
+        <span>
+
+        </span>
+        <span>
+
+        </span>
+        <div class="container">
+            <ul class="flight-results">
+                <% for (var i=0; i < flights.length; i++) { %>
+                    <% var data = flights[i]%>
+                    <% include ./client-side/flight-result%>
+                <% } %>
+            </ul>
+        </div>
+    </section>
+</section>
+
+<footer>
+    <% include ./partials/footer %>
+</footer>
+
+</body>
+</html>
