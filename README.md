@@ -16,7 +16,9 @@ api folder contains middlewares, controllers, models, helpers.
   
 ## assets folder contains the Client side and static files.
     images - All the images
-    js Contains the JS and JS libs
+    js  - Contains the JS and JS libs
+    styles - Contains all the less files
+    
     bower is used to install the library
     RequireJS is used for Module Loading
 
@@ -26,8 +28,11 @@ configs contains the configuration files.
 
 configs/env contains the environment configurations.
 
-Grunt jobs to be define in Gruntfile.js
-
+## Grunt jobs to be define in Gruntfile.js
+   dev - Normal Dev without watch task
+   default - dev with watch task
+   live - for production
+   
 "@TODO Webpack config"
 
 # Travel Comfy System
@@ -38,15 +43,27 @@ We are using ejs templating. All the views exists in views folder.
 
 configs/bootstrap.js initializes our router.
 
-Mantaining Sessions in Memory Store
+  ## Client Side - assets folder
+      js/app contains all the client side javascript files.
+      client libraries are installed using bower and bundled using requirejs (AMD)
+      styles contains all the less files
+      resources contains the data.json (Our Data file)
+  
+  ## Server Side - api folder
+     
+     models contains our model flight.js which interacts with data.json
+     Controller folder contains the controller. (IndexController and SearchController)
+     routes are defined in routes.js
+     helpers are defined which can be used at server side.
+     middlewares are defined in this folder.
 
 
 # Steps to start the application
-1. npm install
-2. grunt
-3. node server.js
-
-# How to use
+1. `npm install`
+2. `bower install`
+2. `npm run servedev` - DEVELOPMENT
+3. `npm run servelive` - PRODUCTION
+3. `node server.js`
 
 
 If you are still not able to run it or wish to contribute. Then mail me
