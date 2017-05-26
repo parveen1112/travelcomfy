@@ -4,9 +4,9 @@
   "description": "Flight Search Application",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js",
+    "test": "node_modules/.bin/mocha-phantomjs ./test/unit/TestRunner.html",
     "servelive": "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt live",
-    "servedev" : "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt"
+    "servedev": "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
@@ -38,6 +38,7 @@
     "less-loader": "^4.0.3",
     "load-grunt-tasks": "^3.5.0",
     "mocha": "^2.4.5",
+    "mocha-phantomjs": "^4.1.0",
     "resolve-url-loader": "^2.0.2",
     "style-loader": "^0.18.1",
     "webpack": "^2.6.0"

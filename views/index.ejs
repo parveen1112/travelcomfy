@@ -13,17 +13,20 @@
 
 <section class="row container middle-container">
     <section class="flight-filter col-md-3">
-        <% include ./partials/tabs %>
+        <form>
+            <% include ./partials/tabs %>
+            <button class="o-btn"> Search </button>
+        </form>
         <% include ./partials/slider %>
     </section>
     <section class="flights-block col-md-9">
-        <span>
+        <span class="fl-heading">
+            <h2>All Flights</h2>
+        </span>
+        <span class="depart-selected">
 
         </span>
-        <span>
-
-        </span>
-        <span>
+        <span class="arrival-selected">
 
         </span>
         <div class="container">

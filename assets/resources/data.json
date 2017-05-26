@@ -110,5 +110,10 @@
         "min" : 0,
         "max": 100000
     },
-    "passengers" : 10
+    "passengers" : [
+        1,
+        2,
+        3,
+        4
+    ]
 }

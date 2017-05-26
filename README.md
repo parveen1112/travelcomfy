@@ -28,10 +28,10 @@ configs contains the configuration files.
 
 configs/env contains the environment configurations.
 
-## Grunt jobs to be define in Gruntfile.js
-   dev - Normal Dev without watch task
-   default - dev with watch task
-   live - for production
+## Grunt jobs to be define in Gruntfile.js :
+    dev - Normal Dev without watch task
+    default - dev with watch task
+    live - for production
    
 "@TODO Webpack config"
 
