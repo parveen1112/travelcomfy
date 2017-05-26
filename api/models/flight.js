@@ -37,6 +37,13 @@ module.exports = {
      * @returns {*}
      */
     get : function(type, args){
+
+        if (args) {
+            args.mn = args.mn && args.mn === 0 ? args.mn : data.range.min;
+            args.mx = args.mx && args.mn === 0 ? args.mx : data.range.max;
+            args.seats = args.seats || 1;
+        }
+
         switch(type) {
             case "ROUND" :
                             return getRoundTripFlights(args);

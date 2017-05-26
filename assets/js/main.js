@@ -6,7 +6,9 @@ require.config({
     paths: {
         'jquery': '../js/libs/vendor/jquery/dist/jquery',
         'underscore': '../js/libs/vendor/underscore/underscore',
-        'jquery-ui' : '../js/libs/vendor/jquery-ui/jquery-ui'
+        'jquery-ui' : '../js/libs/vendor/jquery-ui/jquery-ui',
+        'config' : '../js/app/config',
+        'template' : '../js/app/template'
     },
     shim : {
         "jquery-ui": {
