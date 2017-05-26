@@ -1,0 +1,40 @@
+{
+  "predef": [
+    "define",
+    "JSON"
+  ],
+  "-W024": true,
+  "curly": true,
+  "eqeqeq": true,
+  "es3": true,
+  "forin": false,
+  "indent": 4,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "nonbsp": true,
+  "nonew": true,
+  "quotmark": "single ",
+  "undef": true,
+  "unused": true,
+  "maxparams": 15,
+  "maxdepth": 6,
+  "maxstatements": 100,
+  "eqnull": true,
+  "funcscope": true,
+  "jquery": true,
+  "browser": true,
+  "devel": true,
+  "node": true,
+  "nonstandard": true,
+  "worker": true,
+  "notypeof": true,
+  "multistr": true,
+  "globals": {
+    "require": true,
+    "_" : true,
+    "JSON" : true,
+    "isEmpty": true,
+    "log": true
+  }
+}

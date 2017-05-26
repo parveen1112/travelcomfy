@@ -1,5 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 node_modules
 logs
+assets/js/libs/vendor
+public
 .idea
 .build

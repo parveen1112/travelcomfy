@@ -1,0 +1,26 @@
+{
+  "name": "tcomfy",
+  "authors": [
+    "parveen <parveen1112@gmail.com>"
+  ],
+  "description": "",
+  "main": "main.js",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/js/libs/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "underscore": "^1.8.3",
+    "requirejs": "^2.3.3",
+    "ejs": "^1.0.0",
+    "jquery-ui": "^1.12.1"
+  }
+}

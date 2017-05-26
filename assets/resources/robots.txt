@@ -1,0 +1,4 @@
+# robots.txt for sites where Robots should be disallowed for all pages. 
+
+User-agent: *
+Disallow: /
