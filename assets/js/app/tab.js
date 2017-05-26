@@ -1,8 +1,9 @@
 define(function(){
     function tabButtonHandler(){
-        alert('Hello');
         var activeBlock = $(this).data('tab');
+        $('.tab-btn').removeClass('tab-active');
         $('.tab-block').removeClass('active');
+        $(this).addClass('tab-active');
         $(activeBlock).addClass('active');
     }
     function bindEvents(){
