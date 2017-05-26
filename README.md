@@ -60,7 +60,7 @@ configs/bootstrap.js initializes our router.
 
 # Steps to start the application
 1. `npm install`
-2. `bower install`
+2. `bower install` ( `npm install bower -g` if not installed)
 2. `npm run servedev` - DEVELOPMENT
 3. `npm run servelive` - PRODUCTION
 3. `node server.js`
