@@ -9,7 +9,7 @@ I have created a custom framework over #express for this application. This frame
 api folder contains middlewares, controllers, models, helpers.
 
 ## Middlwares contains :
-    Not-found - Returining 404
+    Not-found - Returning 404
     Router - Initialises the routes
     session - Session middleware
     5xx - Error handler
