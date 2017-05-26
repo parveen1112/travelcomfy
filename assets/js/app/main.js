@@ -1,4 +1,11 @@
+/**
+ * Main File
+ */
 define(['./slider', './tab', 'config', 'template', 'underscore'], function(slider, tab, config){
+    /**
+     * This function is used to Display Search results
+     * @param data
+     */
     function searchResults(data) {
         var resultHTML = '',
             $list = $('ul.flight-results');
