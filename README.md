@@ -44,10 +44,12 @@ We are using ejs templating. All the views exists in views folder.
 configs/bootstrap.js initializes our router.
 
   ## Client Side - assets folder
-      js/app contains all the client side javascript files.
-      client libraries are installed using bower and bundled using requirejs (AMD)
-      styles contains all the less files
-      resources contains the data.json (Our Data file)
+     
+     js/app contains all the client side javascript files.
+     Session is maintained in Session Storage
+     client libraries are installed using bower and bundled using requirejs (AMD)
+     styles contains all the less files
+     resources contains the data.json (Our Data file)
   
   ## Server Side - api folder
      

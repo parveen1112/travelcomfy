@@ -11,8 +11,13 @@ define(function(){
         $('.tab-block').removeClass('active');
         $(this).addClass('tab-active');
         $(activeBlock).addClass('active');
+        session.setSession('tab-block-index', $(this).index());
     }
 
+    function getDataFromSession() {
+        var index = session.getSession('tab-block-index');
+        $('.flight-tabs .tab-btn').eq(index).click();
+    }
     /**
      * Binding all the events
      */
@@ -23,6 +28,7 @@ define(function(){
     return {
         init: function(){
             bindEvents();
+            getDataFromSession();
         }
     };
 

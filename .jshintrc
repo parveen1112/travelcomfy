@@ -35,6 +35,9 @@
     "_" : true,
     "JSON" : true,
     "isEmpty": true,
-    "log": true
+    "log": true,
+    "config": true,
+    "template" : true,
+    "session" : true
   }
 }

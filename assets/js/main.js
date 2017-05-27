@@ -8,7 +8,8 @@ require.config({
         'underscore': '../js/libs/vendor/underscore/underscore',
         'jquery-ui' : '../js/libs/vendor/jquery-ui/jquery-ui',
         'config' : '../js/app/config',
-        'template' : '../js/app/template'
+        'template' : '../js/app/template',
+        'session' : '../js/app/session'
     },
     shim : {
         "jquery-ui": {
