@@ -1,24 +1,35 @@
 @import "variables";
 @import "bootstrap";
-
+body {
+  background-color: transparent;
+  font-family: sans-serif;
+}
 .active {
   display: block !important;
 }
-
 .tab-block {
   display: none;
 }
 
 .flight-tabs {
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
     li {
-      display: inline-block;
       border: 1px solid @light-grey;
+      width: 49%;
       cursor: pointer;
-      padding: 10px;
-
-      &:hover, &:active {
-        font-weight: bold;
-      }
+      float: left;
+      padding: 8px 0;
+      text-align: center;
+      margin: 0 0.1%;
+      border-radius: 20px;
+        &:hover, &:active {
+          font-weight: bold;
+          color: #fff;
+          background-color: #333;
+        }
     }
 }
 
@@ -50,3 +61,83 @@
 .fl-heading {
   text-align: center;
 }
+
+/*Custom CSS*/
+.main-container {
+  width: 80%;
+  margin: auto;
+  border: 1px solid #eee;
+  overflow: hidden;
+  padding: 0 20px;
+}
+.source, .destination, .passengers {
+  select {
+    background-color: transparent;
+    padding: 8px 16px;
+    border: 1px solid #eee;
+    margin: 5px auto;
+    width: 100%;
+  }
+}
+.middle-container {
+  width: 100%;
+  .flight-filter {
+    width: 30%;
+    float: left;
+  }
+  .flights-block {
+    width: 70%;
+    float: left;
+  }
+}
+@media (max-width: 767px) {
+  .flight-tabs {
+    li {
+      width: 100%;
+      margin: 0 0 5px 0;
+    }
+  }
+  .middle-container {
+    width: 100%;
+    .flight-filter,
+    .flights-block {
+      width: 100%;
+    }
+  } 
+  ul.flight-results {
+    padding-left: 0;
+  } 
+}
+.flight-result-detail {
+  border: 1px solid #eee;
+  text-align: left;
+  padding: 10px;
+}
+#filter-src-btn {
+    width: 50%;
+    background: transparent;
+    border: 1px solid #eee;
+    padding: 8px 20px;
+    border-radius: 20px;
+    &:hover {
+      background-color: #333;
+      color: #fff;
+    }
+}
+input[type="date"] {
+    color: #333;
+    width: 96.5%;
+    font-size: 16px;
+    border: 1px solid #eee;
+    background: transparent;
+    padding: 5px;
+  }
+form#form-filter {
+  border: 1px solid #eee;
+  margin: 15px 5px;
+  padding: 10px;
+}
+.ui-widget.ui-widget-content {
+  top: 10px!important;
+}
+/*Custom CSS*/

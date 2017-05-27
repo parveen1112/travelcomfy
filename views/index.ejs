@@ -3,46 +3,45 @@
 <head>
     <% include ./partials/head %>
 </head>
-<body class="container">
+<body>
+    <header class="main-header">
+            <h1>TravelComfy: Flight Search Engine</h1>
+            <a href="javascript:void(0);" class="nav-icon">&#9776;</a>
+    </header>
+    <div class="main-container">
+        <section class="row middle-container">
+            <div class="flight-filter">
+                <form id="form-filter">
+                    <% include ./partials/tabs %>
+                    <input type="button" value="Search" id="filter-src-btn" class="o-btn">  </input>
+                </form>
+                <% include ./partials/slider %>
+            </div>
 
-<header class="main-header">
-    <h1>TravelComfy: Flight Search Engine</h1>
-    <a href="javascript:void(0);" class="nav-icon">&#9776;</a>
+            <div class="flights-block">
+                <span class="fl-heading">
+                    <h2>All Flights</h2>
+                </span>
+                <span class="depart-selected">
+
+                </span>
+                <span class="arrival-selected">
+
+                </span>
+                <div class="container">
+                    <ul class="flight-results">
+                        <% for (var i=0; i < flights.length; i++) { %>
+                            <% var data = flights[i]%>
+                            <% include ./client-side/flight-result%>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
     </div>
-</header>
-
-<section class="row container middle-container">
-    <section class="flight-filter col-md-3">
-        <form id="form-filter">
-            <% include ./partials/tabs %>
-            <input type="button" value="Search" id="filter-src-btn" class="o-btn">  </input>
-        </form>
-        <% include ./partials/slider %>
-    </section>
-    <section class="flights-block col-md-9">
-        <span class="fl-heading">
-            <h2>All Flights</h2>
-        </span>
-        <span class="depart-selected">
-
-        </span>
-        <span class="arrival-selected">
-
-        </span>
-        <div class="container">
-            <ul class="flight-results">
-                <% for (var i=0; i < flights.length; i++) { %>
-                    <% var data = flights[i]%>
-                    <% include ./client-side/flight-result%>
-                <% } %>
-            </ul>
-        </div>
-    </section>
-</section>
-
-<footer>
-    <% include ./partials/footer %>
-</footer>
-
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
 </body>
 </html>
