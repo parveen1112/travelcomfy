@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <% include ./partials/head %>
 </head>
+
 <body class="container">
 
 <header class="main-header">
@@ -33,7 +35,7 @@
             <ul class="flight-results">
                 <% for (var i=0; i < flights.length; i++) { %>
                     <% var data = flights[i]%>
-                    <% include ./client-side/flight-result%>
+                    <% include ./client-side/flight-result %>
                 <% } %>
             </ul>
         </div>

@@ -17,7 +17,8 @@ define(['jquery'], function(){
         switch (data.success) {
             case true:
                 for (var i=0; i < data.data.length; i++) {
-                    resultHTML += window.templates.flightResult({data : data.data[i]});
+                    var flight = data.data[i];
+                    resultHTML += window.templates.flightResult({data : flight.towards, returns : flight.returns || ''});
                 }
                 break;
             case false:
