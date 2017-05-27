@@ -32,7 +32,7 @@ function groupFlights(tempArray, flight, towards) {
  */
 function getRoundTripFlights(args) {
     var temp = [], resultArray = [];
-    if (data && data.flights){
+    if (data && data.flights && args.src && args.dest, args.departDate) {
         data.flights.forEach((flight) => {
             if (args.seats <= flight.seatsleft && args.mn <= flight.price && args.mx >= flight.price) {
                 if ((args.src === flight.src && args.dest === flight.dest && args.departDate === flight.departDate)) {
@@ -56,7 +56,7 @@ function getRoundTripFlights(args) {
  */
 function getOneWayTripFlights(args) {
     var resultArray = [];
-    if (data && data.flights) {
+    if (data && data.flights && args.src && args.dest, args.departDate) {
         data.flights.forEach((flight) => {
             if (args.src === flight.src && args.dest === flight.dest && args.departDate === flight.departDate
                 && args.seats <= flight.seatsleft && args.mn <= flight.price && args.mx >= flight.price) {
@@ -103,7 +103,8 @@ module.exports = {
                             return data && data.range ? data.range : {};
             case "PASSEN" :
                             return data && data.passengers ? data.passengers : 10;
+            default:
+                            return [];
         }
-        return data.place;
     }
 }

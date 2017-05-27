@@ -4,7 +4,8 @@
   "description": "Flight Search Application",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha-phantomjs ./test/unit/TestRunner.html",
+    "testClient": "node_modules/.bin/mocha-phantomjs ./test/unit/TestRunner.html",
+    "testServer" : "node_modules/.bin/mocha",
     "servelive": "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt live",
     "servedev": "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt"
   },

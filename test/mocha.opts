@@ -1,0 +1,4 @@
+--require ./test/mocha-wrapper
+--recursive
+--timeout 5s
+

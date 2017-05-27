@@ -4,13 +4,15 @@ var Logger = require('./../lib/logger'),
     helpers = require('../api/helpers');
 
 
-module.exports = function (bootstrapLocation, router) {
+module.exports = function (bootstrapLocation) {
     var env_config;
     global.appSys = {
         config : {},
         env : process.env.NODE_ENV || 'development'
     };
     global.helpers = helpers;
+
+    console.log(path.join(bootstrapLocation, 'configs', 'config.js'));
 
     // Requiring base config
     appSys.config = require(path.join(bootstrapLocation, 'configs', 'config.js'));
