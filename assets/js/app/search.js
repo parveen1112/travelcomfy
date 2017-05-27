@@ -4,15 +4,44 @@
 define(['jquery'], function(){
 
     var $sliderMin = $('.slider-min'),
-        $sliderMax = $('.slider-max');
+        $sliderMax = $('.slider-max'),
+        source, dest, departTime, arrivalTime;
 
+    /**
+     * This function is used to render the data
+     * @param data
+     */
+    function renderData(resultHTML) {
+        var $list = $('ul.flight-results'),
+            $flightBlocks = $('.flights-block .flight-search-details'),
+            $heading = $flightBlocks.find('.fl-heading h2'),
+            $departSelected = $flightBlocks.find('.depart-selected'),
+            $arrivalSelected = $flightBlocks.find('.arrival-selected'),
+            $departLabel = $flightBlocks.find('.depart-label'),
+            $arrivalLabel = $flightBlocks.find('.arrival-label');
+
+        if (resultHTML) {
+            $flightBlocks.removeClass('hide');
+            $list.html(resultHTML);
+            $heading.html(source + " > " + dest + " > " + source);
+            $departSelected.html(departTime);
+            $departLabel.removeClass('hide');
+            if (arrivalTime) {
+                $arrivalSelected.html(arrivalTime);
+                $arrivalLabel.removeClass('hide');
+            }
+        } else {
+            $list.html('<p class="no-result">' + config.noResultFlight + '</p>');
+            $flightBlocks.addClass('hide');
+        }
+
+    }
     /**
      * This function is used to Display Search results
      * @param data
      */
     function searchResults(data) {
-        var resultHTML = '',
-            $list = $('ul.flight-results');
+        var resultHTML = '';
 
         switch (data.success) {
             case true:
@@ -24,11 +53,7 @@ define(['jquery'], function(){
             case false:
                 console.log(JSON.stringify(data));
         }
-        if (resultHTML) {
-            $list.html(resultHTML);
-        } else {
-            $list.html('<p class="no-result">' + config.noResultFlight + '</p>');
-        }
+        renderData(resultHTML);
     }
 
     /**
@@ -36,16 +61,17 @@ define(['jquery'], function(){
      */
     function srchFilterHandler() {
         var activeTab = $('#form-filter .tab-block.active'),
-            source = activeTab.find('.source select option:selected').text(),
-            dest = activeTab.find('.destination select option:selected').text(),
-            departTime = activeTab.find('.depart-time input').val(),
-            arrivalTime = activeTab.find('.arrival-time input').val(),
             url = config.searchUrl + source + '/' + dest + '/' + departTime.replace(/-/gi, '') + '/',
             queryArray = [],
             passengers = activeTab.find('.passengers select option:selected').text(),
             mn = $sliderMin.text(),
             mx = $sliderMax.text(),
             queryString;
+
+        source = activeTab.find('.source select option:selected').text();
+        dest = activeTab.find('.destination select option:selected').text();
+        departTime = activeTab.find('.depart-time input').val();
+        arrivalTime = activeTab.find('.arrival-time input').val();
 
         if (passengers) {
             queryArray.push(config.passStr + '=' + passengers);
@@ -84,13 +110,14 @@ define(['jquery'], function(){
      */
     function getDataFromSession() {
         var mx = session.getSession('mx'),
-        mn = session.getSession('mn'),
-        passengers = session.getSession('passengers'),
-        arrivalTime = session.getSession('arrivalTime'),
-        departTime = session.getSession('departTime'),
-        source = session.getSession('source'),
-        dest = session.getSession('dest'),
-        activeTab = $('#form-filter .tab-block.active');
+            mn = session.getSession('mn'),
+            passengers = session.getSession('passengers'),
+            activeTab = $('#form-filter .tab-block.active');
+
+        arrivalTime = session.getSession('arrivalTime');
+        departTime = session.getSession('departTime');
+        source = session.getSession('source');
+        dest = session.getSession('dest');
 
         if (departTime && source && dest) {
             activeTab.find('.source select').val(source);
@@ -121,6 +148,7 @@ define(['jquery'], function(){
     }
 
     return {
-        init : init
+        init : init,
+        getResults : srchFilterHandler
     };
 });

@@ -77,8 +77,8 @@ module.exports = {
     get : function(type, args){
 
         if (args) {
-            args.mn = args.mn && args.mn === 0 ? args.mn : data.range.min;
-            args.mx = args.mx && args.mn === 0 ? args.mx : data.range.max;
+            args.mn = args.mn !== undefined ? args.mn : data.range.min;
+            args.mx = args.mx !== undefined ? args.mx : data.range.max;
             args.seats = args.seats || 1;
         }
 

@@ -22,15 +22,16 @@
         <% include ./partials/slider %>
     </section>
     <section class="flights-block col-md-9">
-        <span class="fl-heading">
-            <h2>All Flights</h2>
-        </span>
-        <span class="depart-selected">
+        <div class="flight-search-details">
+            <span class="fl-heading">
+                <h2>All Flights</h2>
+            </span>
+            <label class="depart-label hide">Depart :</label>
+            <span class="depart-selected"></span>
+            <label class="arrival-label hide">Return : </label>
+            <span class="arrival-selected"></span>
+        </div>
 
-        </span>
-        <span class="arrival-selected">
-
-        </span>
         <div class="container">
             <ul class="flight-results">
                 <% for (var i=0; i < flights.length; i++) { %>
