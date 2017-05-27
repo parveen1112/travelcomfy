@@ -42,6 +42,7 @@ module.exports = {
             params.mx = parseInt(req.query.mx);
             params.seats = parseInt(req.query.seats);
             result.data = model.get('ONE', params);
+
         } else {
             result.success = false;
         }

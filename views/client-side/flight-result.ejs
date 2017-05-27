@@ -15,6 +15,26 @@
             <span class="arrivalTime"><%= data.arriveTime %></span>
         </div>
     </div>
+
+    <% if (locals.returns) { %>
+        <div class="flight-result-detail flight-return">
+            <h2 class="price"><%= returns.price %></h2>
+            <p class="flight-id"><%= returns.flightid %></p>
+            <div class="src-dest">
+                <span class="result-src"><%= returns.src %></span> >
+                <span class="result-dest"><%= returns.dest %></span>
+            </div>
+            <div class="depart">
+                <label> DEPART: </label>
+                <span class="departTime"><%= returns.departTime %></span>
+            </div>
+            <div class="arrival">
+                <label> ARRIVAL: </label>
+                <span class="arrivalTime"><%= returns.arriveTime %></span>
+            </div>
+        </div>
+    <% } %>
+
     <div class="flight-image">
         <img src="">
     </div>

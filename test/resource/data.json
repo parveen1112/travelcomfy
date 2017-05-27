@@ -1,0 +1,129 @@
+{
+   "flights": [
+       {
+           "airline" : "1",
+           "flightid" : "AI-201",
+           "price" : 9500,
+           "src" : "DEL",
+           "dest" : "PUN",
+           "seatsleft" : 10,
+           "departDate" : "20170628",
+           "departTime" : "8.00 PM",
+           "arriveTime" : "10.00 PM"
+       },
+       {
+           "airline" : "1",
+           "flightid" : "AI-202",
+           "price" : 8500,
+           "src" : "DEL",
+           "dest" : "PUN",
+           "seatsleft" : 50,
+           "departDate" : "20170628",
+           "departTime" : "10.00 PM",
+           "arriveTime" : "12.00 AM"
+       },
+       {
+           "airline" : "2",
+           "flightid" : "AI-203",
+           "price" : 9500,
+           "src" : "DEL",
+           "dest" : "PUN",
+           "seatsleft" : 50,
+           "departDate" : "20170629",
+           "departTime" : "10.00 AM",
+           "arriveTime" : "12.00 PM"
+       },
+       {
+           "airline" : "1",
+           "flightid" : "AI-204",
+           "price" : 10500,
+           "src" : "PUN",
+           "dest" : "DEL",
+           "seatsleft" : 50,
+           "departDate" : "20170630",
+           "departTime" : "10.00 PM",
+           "arriveTime" : "1.00 AM"
+       },
+       {
+           "airline" : "1",
+           "flightid" : "AI-205",
+           "price" : 9500,
+           "src" : "PUN",
+           "dest" : "DEL",
+           "seatsleft" : 10,
+           "departDate" : "20170630",
+           "departTime" : "10.00 AM",
+           "arriveTime" : "1.00 PM"
+       },
+       {
+           "airline" : "2",
+           "flightid" : "AI-206",
+           "price" : 9500,
+           "src" : "PUN",
+           "dest" : "DEL",
+           "seatsleft" : 10,
+           "departDate" : "20170630",
+           "departTime" : "10.00 AM",
+           "arriveTime" : "1.00 PM"
+       },
+       {
+           "airline" : "1",
+           "flightid" : "AI-207",
+           "price" : 9500,
+           "src" : "DEL",
+           "dest" : "MUM",
+           "seatsleft" : 10,
+           "departDate" : "20170703",
+           "departTime" : "11.00 AM",
+           "arriveTime" : "12.00 PM"
+       },
+       {
+           "airline" : "2",
+           "flightid" : "AI-208",
+           "price" : 9500,
+           "src" : "DEL",
+           "dest" : "MUM",
+           "seatsleft" : 10,
+           "departDate" : "20170703",
+           "departTime" : "10.00 PM",
+           "arriveTime" : "12.00 AM"
+       },
+       {
+           "airline" : "1",
+           "flightid" : "AI-209",
+           "price" : 9500,
+           "src" : "MUM",
+           "dest" : "DEL",
+           "seatsleft" : 10,
+           "departDate" : "20170701",
+           "departTime" : "8.00 AM",
+           "arriveTime" : "10.00 AM"
+       },
+       {
+           "airline" : "2",
+           "flightid" : "AI-210",
+           "price" : 9500,
+           "src" : "MUM",
+           "dest" : "DEL",
+           "seatsleft" : 10,
+           "departDate" : "20170701",
+           "departTime" : "10.00 PM",
+           "arriveTime" : "12.00 PM"
+       }
+   ],
+    "place" : [
+        "DEL",
+        "MUM",
+        "PUN"
+    ],
+    "range" : {
+        "min" : 0,
+        "max": 100000
+    },
+    "passengers" : [
+        1,
+        2,
+        3,
+        4
+    ]
+}

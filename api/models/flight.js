@@ -1,18 +1,52 @@
 var data = require('../../assets/resources/data.json');
 
+function groupFlights(tempArray, flight, towards) {
+
+    var groupFlightArray = [], obj;
+
+    tempArray.forEach((tempEntry) => {
+       if (tempEntry.airline === flight.airline && tempEntry.towards != towards) {
+           if (towards) {
+               groupFlightArray.push({
+                   towards : flight,
+                   returns : tempEntry
+               });
+           } else {
+               groupFlightArray.push({
+                   towards : tempEntry,
+                   returns : flight
+               });
+           }
+       }
+    });
+
+    flight.towards = towards;
+    tempArray.push(flight);
+
+    return groupFlightArray;
+}
 /**
  * Function to get ROund Trip FLights
  * @param args
  * @returns {*}
  */
 function getRoundTripFlights(args) {
-    return data && data.flights ? data.flights.filter((flight) => {
-        if (((args.src === flight.src && args.dest === flight.dest && args.departDate === flight.departDate)
-            ||  (args.src === flight.dest && args.dest === flight.src && args.arrivalDate === flight.departDate))
-            && args.seats <= flight.seatsleft && args.mn <= flight.price && args.mx >= flight.price) {
-            return flight;
-        }
-    }) : [];
+    var temp = [], resultArray = [];
+    if (data && data.flights){
+        data.flights.forEach((flight) => {
+            if (args.seats <= flight.seatsleft && args.mn <= flight.price && args.mx >= flight.price) {
+                if ((args.src === flight.src && args.dest === flight.dest && args.departDate === flight.departDate)) {
+                    resultArray = resultArray.concat(groupFlights(temp, flight, true));
+                } else if ((args.src === flight.dest && args.dest === flight.src && args.arrivalDate === flight.departDate)) {
+                    resultArray = resultArray.concat(groupFlights(temp, flight, false));
+
+                }
+
+            }
+            return false;
+        })
+    }
+    return resultArray;
 }
 
 /**
@@ -21,12 +55,16 @@ function getRoundTripFlights(args) {
  * @returns {*}
  */
 function getOneWayTripFlights(args) {
-    return data && data.flights ? data.flights.filter((flight) => {
-        if (args.src === flight.src && args.dest === flight.dest && args.departDate === flight.departDate
-            && args.seats <= flight.seatsleft && args.mn <= flight.price && args.mx >= flight.price) {
-            return flight;
-        }
-    }) : [];
+    var resultArray = [];
+    if (data && data.flights) {
+        data.flights.forEach((flight) => {
+            if (args.src === flight.src && args.dest === flight.dest && args.departDate === flight.departDate
+                && args.seats <= flight.seatsleft && args.mn <= flight.price && args.mx >= flight.price) {
+                resultArray.push({ towards : flight});
+            }
+        })
+    }
+    return resultArray;
 }
 
 module.exports = {
@@ -39,8 +77,8 @@ module.exports = {
     get : function(type, args){
 
         if (args) {
-            args.mn = args.mn && args.mn === 0 ? args.mn : data.range.min;
-            args.mx = args.mx && args.mn === 0 ? args.mx : data.range.max;
+            args.mn = args.mn !== undefined ? args.mn : data.range.min;
+            args.mx = args.mx !== undefined ? args.mx : data.range.max;
             args.seats = args.seats || 1;
         }
 
