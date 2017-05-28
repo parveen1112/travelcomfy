@@ -4,30 +4,33 @@
 define(['jquery'], function(){
 
     var $sliderMin = $('.slider-min'),
-        $sliderMax = $('.slider-max'),
-        source, dest, departTime, arrivalTime;
+        $sliderMax = $('.slider-max');
 
     /**
      * This function is used to render the data
      * @param data
      */
-    function renderData(resultHTML) {
+    function renderData(resultHTML, data) {
         var $list = $('ul.flight-results'),
             $flightBlocks = $('.flights-block .flight-search-details'),
             $heading = $flightBlocks.find('.fl-heading h2'),
             $departSelected = $flightBlocks.find('.depart-selected'),
             $arrivalSelected = $flightBlocks.find('.arrival-selected'),
             $departLabel = $flightBlocks.find('.depart-label'),
-            $arrivalLabel = $flightBlocks.find('.arrival-label');
+            $arrivalLabel = $flightBlocks.find('.arrival-label'),
+            flight,
+            flightReturn;
 
         if (resultHTML) {
+            flight = data.towards[0];
+            flightReturn = data.returns ? data.returns[0] || '' : '';
             $flightBlocks.removeClass('hide');
             $list.html(resultHTML);
-            $heading.html(source + " > " + dest + " > " + source);
-            $departSelected.html(departTime);
+            $heading.html(flight.source + " > " + flight.dest + " > " + flight.source);
+            $departSelected.html(flight.departTime);
             $departLabel.removeClass('hide');
-            if (arrivalTime) {
-                $arrivalSelected.html(arrivalTime);
+            if (flightReturn) {
+                $arrivalSelected.html(flightReturn.arrivalTime);
                 $arrivalLabel.removeClass('hide');
             }
         } else {
@@ -53,7 +56,7 @@ define(['jquery'], function(){
             case false:
                 console.log(JSON.stringify(data));
         }
-        renderData(resultHTML);
+        renderData(resultHTML, data.data);
     }
 
     /**
@@ -69,12 +72,11 @@ define(['jquery'], function(){
             mn = $sliderMin.text(),
             mx = $sliderMax.text(),
             queryString,
-            url;
-
-        source = activeTab.find('.source select option:selected').text();
-        dest = activeTab.find('.destination select option:selected').text();
-        departTime = activeTab.find('.depart-time input').val();
-        arrivalTime = activeTab.find('.arrival-time input').val();
+            url,
+            source = activeTab.find('.source select option:selected').text(),
+            dest = activeTab.find('.destination select option:selected').text(),
+            departTime = activeTab.find('.depart-time input').val(),
+            arrivalTime = activeTab.find('.arrival-time input').val();
 
         if (passengers) {
             queryArray.push(config.passStr + '=' + passengers);
@@ -118,12 +120,11 @@ define(['jquery'], function(){
         var mx = session.getSession('mx'),
             mn = session.getSession('mn'),
             passengers = session.getSession('passengers'),
-            activeTab = $('#form-filter .tab-block.active');
-
-        arrivalTime = session.getSession('arrivalTime');
-        departTime = session.getSession('departTime');
-        source = session.getSession('source');
-        dest = session.getSession('dest');
+            activeTab = $('.flight-tabs .tab-block.active'),
+            arrivalTime = session.getSession('arrivalTime'),
+            departTime = session.getSession('departTime'),
+            source = session.getSession('source'),
+            dest = session.getSession('dest');
 
         if (departTime && source && dest) {
             activeTab.find('.source select').val(source);

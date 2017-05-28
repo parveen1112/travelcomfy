@@ -37,7 +37,7 @@ define(['mainFile', 'chai'], function(mainFile){
 
         it("should check UI Elements existence", function(){
             expect(function() {mainFile.init(); return true;}()).to.be.true;
-            activeTab = $('#form-filter .tab-block.active');
+            activeTab = $('.flight-tabs .tab-block.active');
             passengers = activeTab.find('.passengers select option:selected').text();
             source = activeTab.find('.source select option:selected').text();
             dest = activeTab.find('.destination select option:selected').text();

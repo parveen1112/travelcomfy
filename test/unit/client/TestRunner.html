@@ -18,77 +18,124 @@
 <div class="main-container">
     <section class="row middle-container">
         <div class="flight-filter">
-            <form id="form-filter">
-                <div class="flight-tabs">
-                    <ul>
-                        <li class="o-btn tab-btn tab-active" data-tab="#one-way">
-                            One Way
-                        </li>
-                        <li class="o-btn tab-btn" data-tab="#round-trip">
-                            Round
-                        </li>
-                    </ul>
-                    <div id="one-way" class="tab-block active">
-                        <div class="source">
-                            <select>
-                                <option value="DEL">DEL</option>
-                                <option value="MUM">MUM</option>
-                                <option value="PUN">PUN</option>
-                            </select>
-                        </div>
-                        <div class="destination">
-                            <select>
-                                <option value="DEL">DEL</option>
-                                <option value="MUM">MUM</option>
-                                <option value="PUN">PUN</option>
-                            </select>
-                        </div>
-                        <div class="depart-time">
-                            <input type="date">
-                        </div>
-                        <div class="passengers">
-                            <select>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="round-trip" class="tab-block">
-                        <div class="source">
-                            <select>
-                                <option value="DEL">DEL</option>
-                                <option value="MUM">MUM</option>
-                                <option value="PUN">PUN</option>
-                            </select>
-                        </div>
-                        <div class="destination">
-                            <select>
-                                <option value="DEL">DEL</option>
-                                <option value="MUM">MUM</option>
-                                <option value="PUN">PUN</option>
-                            </select>
-                        </div>
-                        <div class="depart-time">
-                            <input type="date">
-                        </div>
-                        <div class="arrival-time">
-                            <input type="date">
-                        </div>
-                        <div class="passengers">
-                            <select>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+            <div class="flight-tabs">
+                <ul>
+                    <li class="o-btn tab-btn tab-active" data-tab="#one-way">
+                        One Way
+                    </li>
+                    <li class="o-btn tab-btn" data-tab="#round-trip">
+                        Round
+                    </li>
+                </ul>
+                <div id="one-way" class="tab-block active">
+                    <form id="form-one-way" name="form-one-way" method="get" action="#">
 
-                <input type="button" value="Search" id="filter-src-btn" class="o-btn">
-            </form>
+                        <div class="source">
+                            <select required="">
+                                <option value="">Select</option>
+
+                                <option value="DEL">DEL</option>
+
+                                <option value="MUM">MUM</option>
+
+                                <option value="PUN">PUN</option>
+
+                            </select>
+
+                        </div>
+                        <div class="destination">
+                            <select required="">
+                                <option value="">Select</option>
+
+                                <option value="DEL">DEL</option>
+
+                                <option value="MUM">MUM</option>
+
+                                <option value="PUN">PUN</option>
+
+                            </select>
+
+                        </div>
+                        <div class="depart-time">
+                            <input type="date" required="">
+                        </div>
+
+
+                        <div class="passengers">
+                            <select required="">
+                                <option value="">Select</option>
+
+                                <option value="1">1</option>
+
+                                <option value="2">2</option>
+
+                                <option value="3">3</option>
+
+                                <option value="4">4</option>
+
+                            </select>
+
+                        </div>
+                        <input type="submit" class="o-btn form-submit" value="Search">
+                    </form>
+                </div>
+                <div id="round-trip" class="tab-block">
+                    <form id="form-round-trip" name="form-round-trip" method="get" action="#">
+
+                        <div class="source">
+                            <select required="">
+                                <option value="">Select</option>
+
+                                <option value="DEL">DEL</option>
+
+                                <option value="MUM">MUM</option>
+
+                                <option value="PUN">PUN</option>
+
+                            </select>
+
+                        </div>
+                        <div class="destination">
+                            <select required="">
+                                <option value="">Select</option>
+
+                                <option value="DEL">DEL</option>
+
+                                <option value="MUM">MUM</option>
+
+                                <option value="PUN">PUN</option>
+
+                            </select>
+
+                        </div>
+                        <div class="depart-time">
+                            <input type="date" required="">
+                        </div>
+
+                        <div class="arrival-time">
+                            <input type="date" required="">
+                        </div>
+
+
+                        <div class="passengers">
+                            <select required="">
+                                <option value="">Select</option>
+
+                                <option value="1">1</option>
+
+                                <option value="2">2</option>
+
+                                <option value="3">3</option>
+
+                                <option value="4">4</option>
+
+                            </select>
+
+                        </div>
+                        <input type="submit" class="o-btn form-submit" value="Search">
+                    </form>
+                </div>
+            </div>
             <div class="slider">
                 <h2>Range</h2>
                 <span class="slider-min">0</span>
