@@ -11,7 +11,9 @@ module.exports = function(grunt) {
             srcTemplates : 'assets/js/templates',
             destTemplates : 'public/js/templates',
             srcResource : 'assets/resources',
-            destResource : 'public/resources'
+            destResource : 'public/resources',
+            srcLib : 'assets/js/libs/vendor',
+            destLib : 'public/js/libs/vendor'
         },
         'copy':{
             main: {
@@ -38,6 +40,14 @@ module.exports = function(grunt) {
                     cwd: '<%= paths.srcTemplates %>',
                     src: ['*.js'],
                     dest: '<%= paths.destTemplates %>'
+                }]
+            },
+            libs : {
+                files :[{
+                    expand: true,
+                    cwd: '<%= paths.srcLib %>',
+                    src: ['jquery-ui/**', 'requirejs/**'],
+                    dest: '<%= paths.destLib %>'
                 }]
             }
         },
@@ -129,7 +139,7 @@ module.exports = function(grunt) {
             }
         }
     });
-    grunt.registerTask('default',['githooks', 'less:dev', 'cssmin', 'jshint', 'requirejs:dev', 'copy', 'watch']);
+    grunt.registerTask('default',['githooks', 'less:dev', 'cssmin', 'jshint', 'requirejs:dev', 'copy',  'watch']);
     grunt.registerTask('dev',['githooks', 'less:dev', 'cssmin', 'jshint', 'requirejs:dev', 'copy']);
     grunt.registerTask('live',['less:live', 'cssmin', 'jshint', 'cssmin', 'requirejs:compile', 'copy']);
 }

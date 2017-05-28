@@ -65,6 +65,7 @@ configs/bootstrap.js initializes our router.
      
      Unit Test cases are written in test folder.
      We are using mocha, mocha-phantomjs, chai for writing test cases.
+     use this command "npm run servelive" brfore running the tests.
      Running test cases for server `npm run testserver`
      Running test cases for client `npm run testclient`
 
@@ -73,7 +74,7 @@ configs/bootstrap.js initializes our router.
 2. `bower install` ( `npm install bower -g` if not installed)
 3. `npm run servedev` - DEVELOPMENT
 4. `npm run servelive` - PRODUCTION
-5. `node server.js`
+5. `node server.js` (Please create 'logs' folder before running the command if doesnot exist at base level)
 
 If you are still not able to run it or wish to contribute. Then mail me
     Parveen Arora - <a href="mailto:parveen1112@gmail.com">parveen1112@gmail.com</a>
