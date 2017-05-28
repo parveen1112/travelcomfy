@@ -1,4 +1,4 @@
-<li class="flight-result">
+<li class="flight-result <% if (locals.returns) { %> flight-round-trip <%} else{ %> flight-one-way <% } %>">
     <div class="flight-result-detail">
         <h2 class="price"><%= data.price %></h2>
         <p class="flight-id"><%= data.flightid %></p>
@@ -35,7 +35,8 @@
         </div>
     <% } %>
 
-    <div class="flight-image">
-        <img src="">
+    <div class="flight-result-detail flight-image">
+        <img src="/images/<%=data.image%>">
+        <button class="flight-book o-btn">Book this Flight</button>
     </div>
 </li>

@@ -94,15 +94,17 @@ define(['jquery'], function(){
         queryString = queryArray.length ? '?' + queryArray.join('&') : '';
         arrivalTime = arrivalTime ? arrivalTime.replace(/-/gi, '')  : '';
 
-        $.ajax({
-            method : 'GET',
-            url : url + arrivalTime + queryString,
-            context: this,
-            success: searchResults,
-            error: function() {
-                console.log('Results not fetched');
-            }
-        });
+        if (departTime && source && dest) {
+            $.ajax({
+                method : 'GET',
+                url : url + arrivalTime + queryString,
+                context: this,
+                success: searchResults,
+                error: function() {
+                    console.log('Results not fetched');
+                }
+            });
+        }
     }
 
     /**
