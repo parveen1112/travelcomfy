@@ -4,33 +4,33 @@
 define(['jquery'], function(){
 
     var $sliderMin = $('.slider-min'),
-        $sliderMax = $('.slider-max');
+        $sliderMax = $('.slider-max'),
+        source,
+        dest,
+        departTime,
+        arrivalTime;
 
     /**
      * This function is used to render the data
      * @param data
      */
-    function renderData(resultHTML, data) {
+    function renderData(resultHTML) {
         var $list = $('ul.flight-results'),
             $flightBlocks = $('.flights-block .flight-search-details'),
             $heading = $flightBlocks.find('.fl-heading h2'),
             $departSelected = $flightBlocks.find('.depart-selected'),
             $arrivalSelected = $flightBlocks.find('.arrival-selected'),
-            $departBlock = $flightBlocks.find('.flight-depart-block'),
-            $arrivalBlock = $flightBlocks.find('.flight-arrival-block'),
-            flight,
-            flightReturn;
+            $departLabel = $flightBlocks.find('.flight-depart-block'),
+            $arrivalBlock = $flightBlocks.find('.flight-arrival-block');
 
         if (resultHTML) {
-            flight = data[0].towards;
-            flightReturn = data[0].returns  || '';
             $flightBlocks.removeClass('hide');
             $list.html(resultHTML);
-            $heading.html(flight.src + " > " + flight.dest + " > " + flight.src);
-            $departSelected.html(flight.departTime);
-            $departBlock.removeClass('hide');
-            if (flightReturn) {
-                $arrivalSelected.html(flightReturn.arrivalTime);
+            $heading.html(source + " > " + dest + " > " + source);
+            $departSelected.html(departTime);
+            $departLabel.removeClass('hide');
+            if (arrivalTime) {
+                $arrivalSelected.html(arrivalTime);
                 $arrivalBlock.removeClass('hide');
             }
         } else {
@@ -56,7 +56,7 @@ define(['jquery'], function(){
             case false:
                 console.log(JSON.stringify(data));
         }
-        renderData(resultHTML, data.data);
+        renderData(resultHTML);
     }
 
     /**
@@ -72,10 +72,11 @@ define(['jquery'], function(){
             mn = $sliderMin.text(),
             mx = $sliderMax.text(),
             queryString,
-            url,
-            source = activeTab.find('.source select option:selected').text(),
-            dest = activeTab.find('.destination select option:selected').text(),
-            departTime = activeTab.find('.depart-time input').val(),
+            url, arrivalDate;
+
+            source = activeTab.find('.source select option:selected').text();
+            dest = activeTab.find('.destination select option:selected').text();
+            departTime = activeTab.find('.depart-time input').val();
             arrivalTime = activeTab.find('.arrival-time input').val();
 
         if (passengers) {
@@ -98,12 +99,12 @@ define(['jquery'], function(){
 
         url = config.searchUrl + source + '/' + dest + '/' + departTime.replace(/-/gi, '') + '/';
         queryString = queryArray.length ? '?' + queryArray.join('&') : '';
-        arrivalTime = arrivalTime ? arrivalTime.replace(/-/gi, '')  : '';
+        arrivalDate = arrivalTime ? arrivalTime.replace(/-/gi, '')  : '';
 
         if (departTime && source && dest) {
             $.ajax({
                 method : 'GET',
-                url : url + arrivalTime + queryString,
+                url : url + arrivalDate + queryString,
                 context: this,
                 success: searchResults,
                 error: function() {
@@ -120,10 +121,11 @@ define(['jquery'], function(){
         var mx = session.getSession('mx'),
             mn = session.getSession('mn'),
             passengers = session.getSession('passengers'),
-            activeTab = $('.flight-tabs .tab-block.active'),
-            arrivalTime = session.getSession('arrivalTime'),
-            departTime = session.getSession('departTime'),
-            source = session.getSession('source'),
+            activeTab = $('.flight-tabs .tab-block.active');
+
+            arrivalTime = session.getSession('arrivalTime');
+            departTime = session.getSession('departTime');
+            source = session.getSession('source');
             dest = session.getSession('dest');
 
         if (departTime && source && dest) {

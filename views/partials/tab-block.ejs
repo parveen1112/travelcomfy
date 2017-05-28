@@ -7,11 +7,11 @@
         <% include dropdown%>
     </div>
     <div class="depart-time">
-        <input type="date" required>
+        <input type="text" class="depart-time-inp" required>
     </div>
     <% if (block == "ROUND") { %>
     <div class="arrival-time">
-        <input type="date" required>
+        <input type="text" class="arrival-time-inp" required>
     </div>
     <% } %>
     <% var data = passengers %>
