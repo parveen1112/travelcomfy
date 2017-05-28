@@ -8,7 +8,7 @@ module.exports = function(grunt) {
             destImg: 'public/images',
             srcCSS : 'assets/styles',
             destCSS : 'public/styles',
-            srcTemplates : 'public/templates',
+            srcTemplates : 'assets/js/templates',
             destTemplates : 'public/js/templates',
             srcResource : 'assets/resources',
             destResource : 'public/resources'

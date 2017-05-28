@@ -6,8 +6,8 @@
   "scripts": {
     "testclient": "node_modules/.bin/mocha-phantomjs ./test/unit/client/TestRunner.html",
     "testserver": "node_modules/.bin/mocha ./test/unit/server",
-    "servelive": "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt live",
-    "servedev": "node_modules/.bin/ejs-amd --from views/client-side/ --to public/templates && grunt"
+    "servelive": "node_modules/.bin/ejs-amd --from views/client-side/ --to assets/js/templates && grunt live",
+    "servedev": "node_modules/.bin/ejs-amd --from views/client-side/ --to assets/js/templates && grunt"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
