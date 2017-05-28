@@ -1,83 +1,29 @@
-@import "variables";
 @import "bootstrap";
 
-body {
-  background-color: transparent;
-  font-family: sans-serif;
-}
-
 .active {
-  display: block !important;
+    display: block !important;
 }
 
 .tab-block {
-  display: none;
-}
-
-.flight-tabs {
-    ul {
-      padding-left: 0;
-      list-style: none;
-    }
-    li {
-      border: 1px solid @light-grey;
-      width: 49%;
-      float: left;
-      padding: 8px 0;
-      margin: 0 0.1%;
-      border-radius: 20px;
-        &:hover, &:active {
-          font-weight: bold;
-        }
-    }
-}
-
-.flight-results {
-  .flight-result {
-    text-align: center;
-    min-height: 160px;
-    list-style: none;
-  }
-}
-
-.nav-icon {
-  display: none;
-  @media (max-width: 767px) {
-    display: inline-block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 15px 16px;
-    text-decoration: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    &:hover {
-      background: #ddd;
-      color: black;
-    }
-  }
-}
-
-.fl-heading {
-  text-align: center;
+    display: none;
 }
 
 .main-container {
-  width: 80%;
-  margin: auto;
-  border: 1px solid #eee;
-  overflow: hidden;
-  padding: 0 20px;
+    width: 80%;
+    margin: auto;
+    border: 1px solid #eee;
+    overflow: hidden;
+    padding: 0 20px;
 }
 
 .source, .destination, .passengers {
-  select {
-    background-color: transparent;
-    padding: 8px 16px;
-    border: 1px solid #eee;
-    margin: 5px auto;
-    width: 100%;
-  }
+    select {
+        background-color: transparent;
+        padding: 8px 16px;
+        border: 1px solid #eee;
+        margin: 5px auto;
+        width: 100%;
+    }
 }
 .middle-container {
   width: 100%;
@@ -90,43 +36,61 @@ body {
     float: left;
   }
 }
-@media (max-width: 767px) {
-  .flight-tabs {
+
+.flight-tabs {
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
     li {
-      width: 100%;
-      margin: 0 0 5px 0;
+      border: 1px solid @light-grey;
+      width: 48%;
+      float: left;
+      padding: 8px 0;
+      margin: 0 0.1%;
+      border-radius: 20px;
+        &:hover, &:active {
+          font-weight: bold;
+        }
     }
-  }
-  .middle-container {
-    width: 100%;
-    .flight-filter,
-    .flights-block {
-      width: 100%;
+}
+
+.flight-results {
+    .flight-result {
+        text-align: center;
+        min-height: 160px;
+        list-style: none;
     }
-  } 
-  ul.flight-results {
-    padding-left: 0;
-  } 
+    .no-result{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 40px;
+        font-size: 2em;
+    }
+}
+
+.fl-heading {
+  text-align: center;
 }
 
 .flight-result {
-  border: 1px solid #eee;
-  text-align: left;
-  padding: 10px;
+    border: 1px solid #eee;
+    text-align: left;
+    padding: 10px;
 }
 
 .flight-round-trip{
-  .flight-result-detail {
-    width: 33.3333333%;
-    float: left;
-  }
+    .flight-result-detail {
+        width: 33.3333333%;
+        float: left;
+    }
 }
 
 .flight-one-way{
-  .flight-result-detail {
-    width: 50%;
-    float: left;
-  }
+    .flight-result-detail {
+        width: 50%;
+        float: left;
+    }
 }
 
 .o-btn {
@@ -138,39 +102,59 @@ body {
     cursor: pointer;
     text-align: center;
     &:hover {
-      background-color: #333;
-      color: #fff;
+        background-color: #333;
+        color: #fff;
     }
 }
 
 .flight-image {
-  img {
-    width: 80%;
-    height: 120px;
-    display: block;
-    margin: 0 auto;
-  }
-  .flight-book {
-    margin-top: 10px;
-    width: 80%;
-  }
+    img {
+        width: 80%;
+        height: 120px;
+        display: block;
+        margin: 0 auto;
+    }
+    .flight-book {
+        margin-top: 10px;
+        width: 80%;
+    }
 }
 
-input[type="date"] {
-    color: #333;
-    width: 96.5%;
-    font-size: 16px;
-    border: 1px solid #eee;
-    background: transparent;
-    padding: 5px;
+.slider {
+    margin-bottom: 40px;
+
 }
 
-form#form-filter {
-  border: 1px solid #eee;
-  margin: 15px 5px;
-  padding: 10px;
-}
 .ui-widget.ui-widget-content {
-  top: 10px!important;
+  top: 10px;
+  margin-left: 10px;
 }
-/*Custom CSS*/
+
+form#form-round-trip, form#form-one-way {
+    text-align: center;
+}
+
+.flight-depart-block, .flight-arrival-block {
+    display: inline-block;
+    float: right;
+    clear: both;
+    margin: 10px 0 10px 10px ;
+}
+
+@media (max-width: @screen-sm) {
+  .flight-tabs {
+      li {
+          width: 100%;
+          margin: 0 0 5px 0;
+      }
+  }
+  .middle-container {
+      width: 100%;
+      .flight-filter, .flights-block {
+          width: 100%;
+      }
+  }
+  ul.flight-results {
+      padding-left: 0;
+  }
+}

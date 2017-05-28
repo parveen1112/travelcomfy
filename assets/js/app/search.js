@@ -16,22 +16,22 @@ define(['jquery'], function(){
             $heading = $flightBlocks.find('.fl-heading h2'),
             $departSelected = $flightBlocks.find('.depart-selected'),
             $arrivalSelected = $flightBlocks.find('.arrival-selected'),
-            $departLabel = $flightBlocks.find('.depart-label'),
-            $arrivalLabel = $flightBlocks.find('.arrival-label'),
+            $departBlock = $flightBlocks.find('.flight-depart-block'),
+            $arrivalBlock = $flightBlocks.find('.flight-arrival-block'),
             flight,
             flightReturn;
 
         if (resultHTML) {
-            flight = data.towards[0];
-            flightReturn = data.returns ? data.returns[0] || '' : '';
+            flight = data[0].towards;
+            flightReturn = data[0].returns  || '';
             $flightBlocks.removeClass('hide');
             $list.html(resultHTML);
-            $heading.html(flight.source + " > " + flight.dest + " > " + flight.source);
+            $heading.html(flight.src + " > " + flight.dest + " > " + flight.src);
             $departSelected.html(flight.departTime);
-            $departLabel.removeClass('hide');
+            $departBlock.removeClass('hide');
             if (flightReturn) {
                 $arrivalSelected.html(flightReturn.arrivalTime);
-                $arrivalLabel.removeClass('hide');
+                $arrivalBlock.removeClass('hide');
             }
         } else {
             $list.html('<p class="no-result">' + config.noResultFlight + '</p>');
