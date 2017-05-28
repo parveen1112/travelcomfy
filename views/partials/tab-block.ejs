@@ -1,23 +1,19 @@
 <% var data = places %>
 <div class="source">
-    <% include dropdown%>
+	<% include dropdown%>
 </div>
-
 <div class="destination">
-    <% include dropdown%>
+	<% include dropdown%>
 </div>
-
 <div class="depart-time">
-    <input type="date">
+	<input type="date">
 </div>
-
 <% if (block == "ROUND") { %>
 <div class="arrival-time">
-    <input type="date">
+	<input type="date">
 </div>
 <% } %>
-
 <% var data = passengers %>
 <div class="passengers">
-    <% include dropdown%>
+	<% include dropdown%>
 </div>

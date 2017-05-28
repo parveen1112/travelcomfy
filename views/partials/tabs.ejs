@@ -1,21 +1,16 @@
 <div class="flight-tabs">
-    <ul>
-        <li class="o-btn-tab tab-btn tab-active" data-tab="#one-way">
-            One Way
-        </li>
-        <li class="o-btn-tab tab-btn" data-tab="#round-trip">
-            Round
-        </li>
-    </ul>
-
-    <div id="one-way" class="tab-block active">
-        <% var block = "ONE"%>
-        <% include tab-block %>
-    </div>
-
-    <div id="round-trip" class="tab-block">
-        <% var block = "ROUND"%>
-        <% include tab-block %>
-    </div>
-
+	<ul>
+		<li class="o-btn-tab tab-btn tab-active" data-tab="#one-way">
+			One Way
+		</li>
+		<li class="o-btn-tab tab-btn" data-tab="#round-trip">
+			Round
+		</li>
+	</ul>
+	<div id="one-way" class="tab-block active">
+		<% var block = "ONE"%><% include tab-block %>
+	</div>
+	<div id="round-trip" class="tab-block">
+		<% var block = "ROUND"%><% include tab-block %>
+	</div>
 </div>

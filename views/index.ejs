@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-
 <head>
     <% include ./partials/head %>
 </head>
-
-<body class="container">
-
-<header class="main-header">
-    <h1>TravelComfy: Flight Search Engine</h1>
-    <a href="javascript:void(0);" class="nav-icon">&#9776;</a>
+<body>
+    <header class="main-header">
+        <h1>TravelComfy: Flight Search Engine</h1>
+    </header>
+    <div class="main-container">
+        <section class="row middle-container">
+            <div class="flight-filter">
+                <form id="form-filter">
+                    <% include ./partials/tabs %>
+                    <input type="button" value="Search" id="filter-src-btn" class="o-btn">  </input>
+                </form>
+                <% include ./partials/slider %>
+            </div>
+            <div class="flights-block">
+                <div class="flight-search-details">
+                    <span class="fl-heading">
+                        <h2>All Flights</h2>
+                    </span>
+                    <label class="depart-label hide">Depart :</label>
+                    <span class="depart-selected"></span>
+                    <label class="arrival-label hide">Return : </label>
+                    <span class="arrival-selected"></span>
+                </div>
+                <div class="container">
+                    <ul class="flight-results">
+                        <% for (var i=0; i < flights.length; i++) { %>
+                            <% var data = flights[i]%>
+                            <% include ./client-side/flight-result%>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
-</header>
-
-<section class="row container middle-container">
-    <section class="flight-filter col-md-3">
-        <form id="form-filter">
-            <% include ./partials/tabs %>
-            <input type="button" value="Search" id="filter-src-btn" class="o-btn">  </input>
-        </form>
-        <% include ./partials/slider %>
-    </section>
-    <section class="flights-block col-md-9">
-        <div class="flight-search-details">
-            <span class="fl-heading">
-                <h2>All Flights</h2>
-            </span>
-            <label class="depart-label hide">Depart :</label>
-            <span class="depart-selected"></span>
-            <label class="arrival-label hide">Return : </label>
-            <span class="arrival-selected"></span>
-        </div>
-
-        <div class="container">
-            <ul class="flight-results">
-                <% for (var i=0; i < flights.length; i++) { %>
-                    <% var data = flights[i]%>
-                    <% include ./client-side/flight-result %>
-                <% } %>
-            </ul>
-        </div>
-    </section>
-</section>
-
-<footer>
-    <% include ./partials/footer %>
-</footer>
-
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
 </body>
 </html>

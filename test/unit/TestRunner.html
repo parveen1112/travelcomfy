@@ -1,0 +1,159 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TravelComfy Flight Search Engine</title>
+    <link rel="stylesheet" href="/styles/site.min.css">
+    <link rel="stylesheet" href="/js/libs/vendor/jquery-ui/themes/smoothness/jquery-ui.min.css">
+    <script src="/js/libs/vendor/requirejs/require.js" data-main="js/main"></script>
+    <style id="custom-css-style"></style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="js/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/main" src="js/app/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/slider" src="js/app/slider.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/tab" src="js/app/tab.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/search" src="js/app/search.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="config" src="js/../js/app/config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="session" src="js/../js/app/session.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="template" src="js/../js/app/template.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="underscore" src="js/../js/libs/vendor/underscore/underscore.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="js/../js/libs/vendor/jquery/dist/jquery.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../templates/flight-result" src="js/../templates/flight-result.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-ui" src="js/../js/libs/vendor/jquery-ui/jquery-ui.js"></script></head>
+<body>
+<header class="main-header">
+    <h1>TravelComfy: Flight Search Engine</h1>
+</header>
+<div class="main-container">
+    <section class="row middle-container">
+        <div class="flight-filter">
+            <form id="form-filter">
+                <div class="flight-tabs">
+                    <ul>
+                        <li class="o-btn-tab tab-btn tab-active" data-tab="#one-way">
+                            One Way
+                        </li>
+                        <li class="o-btn-tab tab-btn" data-tab="#round-trip">
+                            Round
+                        </li>
+                    </ul>
+                    <div id="one-way" class="tab-block active">
+                        <div class="source">
+                            <select>
+                                <option value="DEL">DEL</option>
+                                <option value="MUM">MUM</option>
+                                <option value="PUN">PUN</option>
+                            </select>
+                        </div>
+                        <div class="destination">
+                            <select>
+                                <option value="DEL">DEL</option>
+                                <option value="MUM">MUM</option>
+                                <option value="PUN">PUN</option>
+                            </select>
+                        </div>
+                        <div class="depart-time">
+                            <input type="date">
+                        </div>
+                        <div class="passengers">
+                            <select>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="round-trip" class="tab-block">
+                        <div class="source">
+                            <select>
+                                <option value="DEL">DEL</option>
+                                <option value="MUM">MUM</option>
+                                <option value="PUN">PUN</option>
+                            </select>
+                        </div>
+                        <div class="destination">
+                            <select>
+                                <option value="DEL">DEL</option>
+                                <option value="MUM">MUM</option>
+                                <option value="PUN">PUN</option>
+                            </select>
+                        </div>
+                        <div class="depart-time">
+                            <input type="date">
+                        </div>
+                        <div class="arrival-time">
+                            <input type="date">
+                        </div>
+                        <div class="passengers">
+                            <select>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="button" value="Search" id="filter-src-btn" class="o-btn">
+            </form>
+            <div class="slider">
+                <h2>Range</h2>
+                <span class="slider-min">0</span>
+                -
+                <span class="slider-max">100000</span>
+                <div id="range-slider" data-min="0" data-max="100000" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                    <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span></div>
+            </div>
+        </div>
+        <div class="flights-block">
+            <div class="flight-search-details">
+                    <span class="fl-heading">
+                        <h2>DEL &gt; PUN &gt; DEL</h2>
+                    </span>
+                <label class="depart-label">Depart :</label>
+                <span class="depart-selected">2017-06-28</span>
+                <label class="arrival-label hide">Return : </label>
+                <span class="arrival-selected"></span>
+            </div>
+            <div class="container">
+                <ul class="flight-results">
+                    <li class="flight-result">
+                        <div class="flight-result-detail">
+                            <h2 class="price">9500</h2>
+                            <p class="flight-id">AI-201</p>
+                            <div class="src-dest">
+                                <span class="result-src">DEL</span> &gt;
+                                <span class="result-dest">PUN</span>
+                            </div>
+                            <div class="depart">
+                                <label> DEPART: </label>
+                                <span class="departTime">8.00 PM</span>
+                            </div>
+                            <div class="arrival">
+                                <label> ARRIVAL: </label>
+                                <span class="arrivalTime">10.00 PM</span>
+                            </div>
+                        </div>
+                        <div class="flight-image">
+                            <img src="">
+                        </div>
+                    </li>
+                    <li class="flight-result">
+                        <div class="flight-result-detail">
+                            <h2 class="price">8500</h2>
+                            <p class="flight-id">AI-202</p>
+                            <div class="src-dest">
+                                <span class="result-src">DEL</span> &gt;
+                                <span class="result-dest">PUN</span>
+                            </div>
+                            <div class="depart">
+                                <label> DEPART: </label>
+                                <span class="departTime">10.00 PM</span>
+                            </div>
+                            <div class="arrival">
+                                <label> ARRIVAL: </label>
+                                <span class="arrivalTime">12.00 AM</span>
+                            </div>
+                        </div>
+                        <div class="flight-image">
+                            <img src="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+    <p class="text-center text-muted">© Copyright 2016. Parveen Arora</p>
+</footer>
+
+</body></html>
