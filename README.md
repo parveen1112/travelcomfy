@@ -41,12 +41,14 @@ api folder contains the routes.js which contains the routes and their controller
 
 We are using ejs templating. All the views exists in views folder.
 
+HTML5 Form Validation is applied.
+
 configs/bootstrap.js initializes our router.
 
   ## Client Side - assets folder
      
      js/app contains all the client side javascript files.
-     Session is maintained in Session Storage
+     Session is maintained in Session Storage of browser
      client libraries are installed using bower and bundled using requirejs (AMD)
      styles contains all the less files
      resources contains the data.json (Our Data file)
@@ -59,6 +61,12 @@ configs/bootstrap.js initializes our router.
      helpers are defined which can be used at server side.
      middlewares are defined in this folder.
 
+  ## Unit Test cases
+     
+     Unit Test cases are written in test folder.
+     We are using mocha, mocha-phantomjs, chai for writing test cases.
+     Running test cases for server `npm run testserver`
+     Running test cases for client `npm run testclient`
 
 # Steps to start the application
 1. `npm install`
@@ -66,8 +74,6 @@ configs/bootstrap.js initializes our router.
 3. `npm run servedev` - DEVELOPMENT
 4. `npm run servelive` - PRODUCTION
 5. `node server.js`
-6. Running test cases for server `npm run testserver`
-7. Running test cases for client `npm run testclient`
 
 If you are still not able to run it or wish to contribute. Then mail me
     Parveen Arora - <a href="mailto:parveen1112@gmail.com">parveen1112@gmail.com</a>

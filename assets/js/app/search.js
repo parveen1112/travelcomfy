@@ -60,6 +60,19 @@ define(['jquery'], function(){
     }
 
     /**
+     * This function is used to check validations
+     */
+    function validationCheck(){
+        var activeTab = $('.flight-tabs .tab-block.active'),
+            $departureInput = activeTab.find('.depart-time input'),
+            $returnInput = activeTab.find('.arrival-time input');
+        if ($departureInput.datepicker('getDate') > $returnInput.datepicker('getDate')) {
+            $returnInput.get(0).setCustomValidity(config.returnDateMessage);
+        } else {
+            $returnInput.get(0).setCustomValidity('');
+        }
+    }
+    /**
      * This function is used to search the results
      */
     function srchFilterHandler(event) {
@@ -72,12 +85,14 @@ define(['jquery'], function(){
             mn = $sliderMin.text(),
             mx = $sliderMax.text(),
             queryString,
-            url, arrivalDate;
+            url, arrivalDate,
+            $departureInput = activeTab.find('.depart-time input'),
+            $returnInput = activeTab.find('.arrival-time input');
 
-            source = activeTab.find('.source select option:selected').text();
-            dest = activeTab.find('.destination select option:selected').text();
-            departTime = activeTab.find('.depart-time input').val();
-            arrivalTime = activeTab.find('.arrival-time input').val();
+        source = activeTab.find('.source select option:selected').text();
+        dest = activeTab.find('.destination select option:selected').text();
+        departTime = $departureInput.val();
+        arrivalTime = $returnInput.val();
 
         if (passengers) {
             queryArray.push(config.passStr + '=' + passengers);
@@ -145,6 +160,7 @@ define(['jquery'], function(){
      * This function is used to bind Events
      */
     function bindEvents(){
+        $('#form-round-trip .form-submit').on('click', validationCheck);
         $('#form-round-trip').on('submit', srchFilterHandler);
         $('#form-one-way').on('submit', srchFilterHandler);
     }
