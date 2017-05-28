@@ -57,7 +57,7 @@ function encode_char(c) {
     ;  } 
     ; __append("\r\n\r\n    <div class=\"flight-result-detail flight-image\">\r\n        <img src=\"/images/")
     ; __append(escape(data.image))
-    ; __append("\">\r\n        <button class=\"flight-book o-btn\">Book this Flight</button>\r\n    </div>\r\n</li>")
+    ; __append("\">\r\n        <button class=\"flight-book o-btn\">Book</button>\r\n    </div>\r\n</li>")
   }
   return __output.join("");
 

@@ -58,9 +58,9 @@
 .flight-results {
     .flight-result {
         text-align: center;
-        min-height: 200px;
         list-style: none;
         margin: 5px 0;
+        overflow: hidden;
     }
     .no-result{
         text-align: center;
@@ -69,6 +69,7 @@
         font-size: 2em;
     }
 }
+
 
 .fl-heading {
   text-align: center;
@@ -111,7 +112,7 @@
 .flight-image {
     img {
         width: 80%;
-        height: 120px;
+        height: 140px;
         display: block;
         margin: 0 auto;
     }
@@ -128,11 +129,14 @@
 
 .ui-widget.ui-widget-content {
   top: 10px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 form#form-round-trip, form#form-one-way {
     text-align: center;
+  .form-submit {
+    width: 100%;
+  }
 }
 
 .flight-depart-block, .flight-arrival-block {
@@ -153,6 +157,17 @@ form#form-round-trip, form#form-one-way {
 }
 
 @media (max-width: @screen-sm) {
+    .flight-image{
+      img, .flight-book{
+        width: 95%;
+      }
+    }
+  ul.flight-results {
+    font-size: 0.857em;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
   .flight-tabs {
       li {
           width: 100%;
@@ -168,9 +183,12 @@ form#form-round-trip, form#form-one-way {
   ul.flight-results {
       padding-left: 0;
   }
-  .flight-results {
-    .flight-result {
-        min-height: 200px;
+
+  .flight-one-way {
+    .flight-image {
+      img, button {
+        width: 100%;
+      }
     }
   }
 }
