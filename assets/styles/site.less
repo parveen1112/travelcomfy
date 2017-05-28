@@ -58,8 +58,9 @@
 .flight-results {
     .flight-result {
         text-align: center;
-        min-height: 160px;
+        min-height: 200px;
         list-style: none;
+        margin: 5px 0;
     }
     .no-result{
         text-align: center;
@@ -81,7 +82,7 @@
 
 .flight-round-trip{
     .flight-result-detail {
-        width: 33.3333333%;
+        width: 33%;
         float: left;
     }
 }
@@ -148,6 +149,7 @@ form#form-round-trip, form#form-one-way {
   border: 1px solid #eee;
   background: transparent;
   padding: 5px;
+  margin: 5px 0;
 }
 
 @media (max-width: @screen-sm) {
@@ -165,5 +167,10 @@ form#form-round-trip, form#form-one-way {
   }
   ul.flight-results {
       padding-left: 0;
+  }
+  .flight-results {
+    .flight-result {
+        min-height: 200px;
+    }
   }
 }
