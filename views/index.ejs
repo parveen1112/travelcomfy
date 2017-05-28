@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js ie7" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js ie8" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html <![endif]-->
+<!--[if IE 9]> <html lang="en" class="no-js ie9" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <% include ./partials/head %>
@@ -10,10 +15,7 @@
     <div class="main-container">
         <section class="row middle-container">
             <div class="flight-filter">
-                <form id="form-filter">
-                    <% include ./partials/tabs %>
-                    <input type="button" value="Search" id="filter-src-btn" class="o-btn">  </input>
-                </form>
+                <% include ./partials/tabs %>
                 <% include ./partials/slider %>
             </div>
             <div class="flights-block">

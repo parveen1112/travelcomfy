@@ -59,14 +59,17 @@ define(['jquery'], function(){
     /**
      * This function is used to search the results
      */
-    function srchFilterHandler() {
-        var activeTab = $('#form-filter .tab-block.active'),
-            url = config.searchUrl + source + '/' + dest + '/' + departTime.replace(/-/gi, '') + '/',
+    function srchFilterHandler(event) {
+        if (event) {
+            event.preventDefault();
+        }
+        var activeTab = $('.flight-tabs .tab-block.active'),
             queryArray = [],
             passengers = activeTab.find('.passengers select option:selected').text(),
             mn = $sliderMin.text(),
             mx = $sliderMax.text(),
-            queryString;
+            queryString,
+            url;
 
         source = activeTab.find('.source select option:selected').text();
         dest = activeTab.find('.destination select option:selected').text();
@@ -91,6 +94,7 @@ define(['jquery'], function(){
         session.setSession('source', source);
         session.setSession('dest', dest);
 
+        url = config.searchUrl + source + '/' + dest + '/' + departTime.replace(/-/gi, '') + '/';
         queryString = queryArray.length ? '?' + queryArray.join('&') : '';
         arrivalTime = arrivalTime ? arrivalTime.replace(/-/gi, '')  : '';
 
@@ -138,7 +142,8 @@ define(['jquery'], function(){
      * This function is used to bind Events
      */
     function bindEvents(){
-        $(document).on('click', '#filter-src-btn', srchFilterHandler);
+        $('#form-round-trip').on('submit', srchFilterHandler);
+        $('#form-one-way').on('submit', srchFilterHandler);
     }
 
     /**
