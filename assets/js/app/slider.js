@@ -1,7 +1,7 @@
 /**
  * Handling Slider functionality
  */
-define(['./search', 'jquery-ui'], function(search){
+define(['search', 'jquery-ui'], function(search){
     var $slider = $('#range-slider'),
         getResults = _.debounce(search.getResults, 100);
 

@@ -1,7 +1,7 @@
 /**
  * Main File
  */
-define(['./slider', './tab', './search', 'config', 'session', 'template', 'underscore'], function(slider, tab, search, config, session){
+define(['slider', 'tab', 'search', 'config', 'session', 'template', 'underscore'], function(slider, tab, search, config, session){
     /**
      * This function is used to bind Events
      */

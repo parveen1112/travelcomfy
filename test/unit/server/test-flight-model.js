@@ -1,4 +1,4 @@
-var flightModel = require('../../api/models/flight');
+var flightModel = require('../../../api/models/flight');
 
 describe('Flight Model Testing', function () {
     it('should check the Flight  Model Existence', function(){

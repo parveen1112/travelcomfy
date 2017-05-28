@@ -1,15 +1,20 @@
-<html lang="en" xmlns="http://www.w3.org/1999/html"><head>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TravelComfy Flight Search Engine</title>
-    <link rel="stylesheet" href="/styles/site.min.css">
-    <link rel="stylesheet" href="/js/libs/vendor/jquery-ui/themes/smoothness/jquery-ui.min.css">
-    <script src="/js/libs/vendor/requirejs/require.js" data-main="js/main"></script>
-    <style id="custom-css-style"></style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="js/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/main" src="js/app/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/slider" src="js/app/slider.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/tab" src="js/app/tab.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/search" src="js/app/search.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="config" src="js/../js/app/config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="session" src="js/../js/app/session.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="template" src="js/../js/app/template.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="underscore" src="js/../js/libs/vendor/underscore/underscore.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="js/../js/libs/vendor/jquery/dist/jquery.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../templates/flight-result" src="js/../templates/flight-result.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-ui" src="js/../js/libs/vendor/jquery-ui/jquery-ui.js"></script></head>
+    <link rel="stylesheet" href="../../../node_modules/mocha/mocha.css">
+    <script src="../../../public/js/libs/vendor/requirejs/require.js" data-main="../../specRunner.js"></script>
+</head>
 <body>
-<header class="main-header">
-    <h1>TravelComfy: Flight Search Engine</h1>
-</header>
+
+
+<style type="text/css">
+    .main-container{
+        display: none;
+    }
+</style>
+
 <div class="main-container">
     <section class="row middle-container">
         <div class="flight-filter">
@@ -152,6 +157,7 @@
         </div>
     </section>
 </div>
+<div id="mocha"></div>
 <footer>
     <p class="text-center text-muted">© Copyright 2016. Parveen Arora</p>
 </footer>

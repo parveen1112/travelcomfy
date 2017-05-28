@@ -9,7 +9,10 @@ require.config({
         'jquery-ui' : '../js/libs/vendor/jquery-ui/jquery-ui',
         'config' : '../js/app/config',
         'template' : '../js/app/template',
-        'session' : '../js/app/session'
+        'session' : '../js/app/session',
+        'slider' : '../js/app/slider',
+        'tab' : '../js/app/tab',
+        'search' : '../js/app/search'
     },
     shim : {
         "jquery-ui": {
